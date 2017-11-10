@@ -1,0 +1,19 @@
+{
+  "name": "hrsf83-mvp",
+  "version": "1.0.0",
+  "description": "MVP project for Hack Reactor, Built to Search Memes",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtarellano/hrsf83-mvp.git"
+  },
+  "author": "David Arellano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dtarellano/hrsf83-mvp/issues"
+  },
+  "homepage": "https://github.com/dtarellano/hrsf83-mvp#readme"
+}
