@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "webpack -d --watch",
-    "build" : "webpack -p"
+    "build" : "webpack -p",
+    "server": "nodemon database/server.js"
   },
   "repository": {
     "type": "git",
