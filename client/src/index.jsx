@@ -1,12 +1,19 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import { render } from 'react-dom';
+import axios from 'axios';
+
+import MemeList from './Components/MemeList.jsx';
+import Search from './Components/Search.jsx';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      memes: [],
       search: ''
     }
+    this.search = this.search.bind(this);
+    this.onSearch = this.onSearch.bind(this);
   }
   componentDidMount() {
 
@@ -15,6 +22,12 @@ class App extends React.Component {
   search(e) {
     this.setState({
       search: e.target.value
+    })
+  }
+
+  onSearch() {
+    axios.post('/memes', {
+      query: this.state.search
     });
   }
 
@@ -22,9 +35,13 @@ class App extends React.Component {
     return (
       <div>
         <h1>Yo You Init</h1>
+        <Search search={this.search}
+                onSearch={this.onSearch}
+        />
+        <MemeList />
       </div>
     )
   }
 }
 
-ReactDom.render(<App />, document.getElementById('app'));
+render(<App />, document.getElementById('app'));
