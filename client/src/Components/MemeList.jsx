@@ -1,8 +1,12 @@
 import React from 'react';
+import Meme from './Meme.jsx';
 
 const Memelist = props => (
   <div>
-    <h3>The Dankest Memes</h3>
+    <h3>Lit Memes</h3>
+    {props.memes.map(meme => {
+      return <Meme meme={meme} />
+    })}
   </div>
 )
 

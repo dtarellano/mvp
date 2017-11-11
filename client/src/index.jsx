@@ -16,7 +16,11 @@ class App extends React.Component {
     this.onSearch = this.onSearch.bind(this);
   }
   componentDidMount() {
-
+    axios.get('/memes').then(res => {
+      this.setState({
+        memes: res.data
+      });
+    });
   }
 
   search(e) {
@@ -38,7 +42,7 @@ class App extends React.Component {
         <Search search={this.search}
                 onSearch={this.onSearch}
         />
-        <MemeList />
+        <MemeList memes={this.state.memes} />
       </div>
     )
   }

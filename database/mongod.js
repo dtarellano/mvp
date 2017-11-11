@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/memes');
 
-let memeSchema = mongoose.Schema('Memes', {
-  id: Number,
+let memeSchema = mongoose.Schema({
+  id: String,
   title: String,
   link: String,
   views: Number,
@@ -11,7 +11,7 @@ let memeSchema = mongoose.Schema('Memes', {
   downs: Number
 });
 
-let Memes = mongoose.model('meme', memeSchema);
+let Memes = mongoose.model('Meme', memeSchema);
 
 let save = (meme) => {
   return new Memes(meme).save( error => {
@@ -22,4 +22,8 @@ let save = (meme) => {
   });
 }
 
+let get = () => {
+  return Memes.find()
+}
 module.exports.save = save;
+module.exports.get = get;

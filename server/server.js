@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyparser = require('body-parser');
 const getMemes = require('./GetMemes.js');
+const mongod = require('../database/mongod.js')
 
 let app = express();
 
@@ -15,6 +16,9 @@ app.post('/memes', function(req, res) {
 
 app.get('/memes', function(req, res) {
   console.log('successfuly responded to GET')
+  mongod.get().then(response => {
+    res.send(response);
+  });
 });
 
 let port = 1337;
