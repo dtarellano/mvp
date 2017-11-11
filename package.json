@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack -d --watch",
     "build" : "webpack -p",
-    "server": "nodemon database/server.js"
+    "server": "nodemon server/server.js"
   },
   "repository": {
     "type": "git",
