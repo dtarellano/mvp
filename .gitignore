@@ -2,6 +2,7 @@
 
 # Logs
 logs
+imgurId.js
 *.log
 
 # Runtime data

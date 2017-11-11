@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyparser = require('body-parser');
+const getMemes = require('./GetMemes.js');
 
 let app = express();
 
@@ -9,6 +10,7 @@ app.use(express.static(__dirname + '/../client/dist'));
 app.post('/memes', function(req, res) {
   console.log('successfuly responded to POST');
   console.log(req.body);
+  getMemes.get(req.body.query)
 });
 
 app.get('/memes', function(req, res) {
