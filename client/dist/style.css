@@ -1,4 +1,17 @@
 img {
-  width: 500px;
+  width: 300px;
   height: auto;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.meme {
+  width: 350px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
 }

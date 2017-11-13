@@ -1,9 +1,11 @@
 import React from 'react';
 
 const Search = props => (
-  <div>
-    <input type="text" onChange={props.search} />
-    <button onClick={props.onSearch} >Submit</button>
+  <div className="input-group">
+    <input type="text" className="form-control"onChange={props.search} />
+    <span className="input-group-btn">
+      <button className="btn btn-secondary" onClick={props.onSearch} >Submit</button>
+    </span>
   </div>
 )
 
