@@ -1,6 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import imgurId from '../../../imgurId.js';
+
+import MemeList from './MemeList.jsx';
+import Search from './Search.jsx';
 
 class SearchedMemes extends React.Component {
   constructor() {
@@ -44,7 +48,23 @@ class SearchedMemes extends React.Component {
   }
   render() {
     return (
-      <div>Hi</div>
+      <div>
+        <div className="container">
+          <ul className="nav justify-content-end">
+            <li className="nav-item">
+              <Link to="/">
+                <a className="nav-link active" href="#">Home</a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Search search={this.search}
+                      onSearch={this.onSearch}
+              />
+            </li>
+          </ul>
+          <MemeList memes={this.state.memes} />
+        </div>
+      </div>
     )
   }
 }
