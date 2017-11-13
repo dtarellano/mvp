@@ -18,10 +18,15 @@ class Memelist extends React.Component {
     })
   }
   render() {
-    let load = '...Loading...';
+    let load = (
+      <div className="loading">
+        <h3>Loading... :3</h3>
+        <img src="https://loading.io/spinners/bluecat/lg.blue-longcat-spinner.gif" alt="Loading Kitty"/>
+      </div>
+    )
     if (this.state.memes.memes.length > 0) {
       load = this.state.memes.memes.map(meme => {
-        return <Meme meme={meme} key={meme.id}/>
+        return <Meme input={this.state.search} meme={meme} key={meme.id}/>
       });
     }
 

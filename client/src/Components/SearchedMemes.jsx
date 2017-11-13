@@ -47,7 +47,8 @@ class SearchedMemes extends React.Component {
       });
 
       this.setState({
-        database: database
+        database: database,
+        search: ''
       })
     })
     .catch(error => {
