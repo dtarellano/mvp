@@ -20,7 +20,7 @@ class Memelist extends React.Component {
   render() {
     let load = (
       <div className="loading">
-        <h3>Loading... :3</h3>
+        <h3>Waiting On Search</h3>
         <img src="https://loading.io/spinners/bluecat/lg.blue-longcat-spinner.gif" alt="Loading Kitty"/>
       </div>
     )
