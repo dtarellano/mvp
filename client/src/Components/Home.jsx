@@ -33,7 +33,15 @@ class Home extends React.Component {
   onSearch() {
     axios.post('/memes', {
       query: this.state.search
-    });
+    }).then( res => {
+      console.log('message sent');
+      axios.get('/memes').then(res => {
+        console.log('yo what we got back', res)
+        // this.setState({
+        //   memes: res.data
+        // });
+      });
+    })
   }
 
   render() {

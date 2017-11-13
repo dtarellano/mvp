@@ -23,7 +23,7 @@ let save = (meme) => {
 }
 
 let get = () => {
-  return Memes.find()
+  return Memes.find().limit(30).sort('-views');
 }
 module.exports.save = save;
 module.exports.get = get;

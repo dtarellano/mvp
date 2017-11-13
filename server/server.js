@@ -10,7 +10,8 @@ app.use(express.static(__dirname + '/../client/dist'));
 
 app.post('/memes', function(req, res) {
   console.log('successfuly responded to POST');
-  getMemes.get(req.body.query)
+  getMemes.get(req.body.query);
+  res.send();
 });
 
 app.get('/memes', function(req, res) {

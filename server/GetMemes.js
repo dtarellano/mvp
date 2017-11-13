@@ -5,7 +5,7 @@ const mongod = require('../database/mongod.js');
 
 let get = searchTerm => {
   let term = searchTerm.split(' ').join('+');
-  axios.get(`https://api.imgur.com/3/g/memes/search/?q=${term}`, {
+  axios.get(`https://api.imgur.com/3/gallery/search/top/?q_exactly=${term}`, {
     headers: {
       Authorization: `Client-ID ${imgur.id}`
     }

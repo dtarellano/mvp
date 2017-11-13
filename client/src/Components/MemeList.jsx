@@ -12,7 +12,6 @@ class Memelist extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps', nextProps);
     this.setState({
       memes: nextProps
     })
