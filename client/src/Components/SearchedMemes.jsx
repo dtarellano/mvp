@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import imgurId from '../../../imgurId.js';
+import imgur from '../../../imgurId.js';
 
 import MemeList from './MemeList.jsx';
 import Search from './Search.jsx';
@@ -13,11 +13,18 @@ class SearchedMemes extends React.Component {
       search: '',
       database: []
     }
+    this.search = this.search.bind(this);
+    this.onSearch = this.onSearch.bind(this);
+  }
+  search(e) {
+    this.setState({
+      search: e.target.value
+    })
   }
 
-  search() {
-    let term = searchTerm.split(' ').join('+');
-    axios.get(`https://api.imgur.com/3/g/memes/search/?q=${term}`, {
+  onSearch() {
+    let term = this.state.search.split(' ').join('+');
+    axios.get(`https://api.imgur.com/3/gallery/search/top/?q_exactly=${term}`, {
       headers: {
         Authorization: `Client-ID ${imgur.id}`
       }
@@ -38,6 +45,7 @@ class SearchedMemes extends React.Component {
         }
         database.push(data);
       });
+
       this.setState({
         database: database
       })
@@ -62,7 +70,7 @@ class SearchedMemes extends React.Component {
               />
             </li>
           </ul>
-          <MemeList memes={this.state.memes} />
+          <MemeList memes={this.state.database} />
         </div>
       </div>
     )
